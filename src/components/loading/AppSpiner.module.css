@@ -1,0 +1,23 @@
+.absolute {
+  position: fixed;
+  z-index: 11111;
+  left: calc(50% - 18px);
+  top: calc(50% - 24px);
+}
+.spinner {
+  display: inline-block;
+  width: 5rem;
+  height: 5rem;
+  vertical-align: -0.125em;
+  border: 0.5em solid cornsilk;
+  border-right-color: transparent;
+  border-radius: 50%;
+  animation: spinner-border 0.75s linear infinite;
+  -webkit-animation: spinner-border 0.75s linear infinite;
+}
+@keyframes spinner-border {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spinner-border {
+  to { -webkit-transform: rotate(360deg); }
+}

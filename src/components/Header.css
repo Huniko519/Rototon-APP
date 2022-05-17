@@ -1,0 +1,116 @@
+.Header {
+  height: 90px;
+  display: grid;
+  grid-template-areas: "logo nav";
+  background-color: #061121;
+  padding: 0 4rem;
+  color: white;
+}
+
+.Logo {
+  grid-area: logo;
+  width: 70px;
+}
+
+.Nav {
+  z-index: 1;
+  /* display: grid;
+    grid-area: nav;
+    grid-template-columns: repeat(2, auto);
+    align-items: center;
+    justify-items: right;
+    max-width: 400px; */
+}
+.Nav a {
+  color: #f4f4f4;
+  font-size: 18px;
+  font-weight: 500;
+  transition: 0.5s;
+  padding: 0 8px;
+  text-decoration: none;
+}
+.Nav button {
+  padding: 10px;
+  outline: none;
+  border: none;
+  font-size: 14px;
+  color: #fff;
+  font-weight: 700;
+  background-color: rgba(182, 202, 213);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 70ms;
+  background-color: #129dff;
+  margin-left: 20px;
+}
+.Nav button:hover {
+  background-color: #229dff;
+}
+.Nav button:active {
+  transform: translateY(3px);
+  box-shadow: 0px 2px 0px 0px rgba(255, 0, 0, 0.25);
+}
+
+.Burger {
+  display: none;
+  grid-area: burger;
+  margin: 0 20px 0 0;
+  padding: 0;
+  justify-self: end;
+  font-size: 40px;
+  border: none;
+  background: none;
+  outline: none;
+  transition: 0.1s;
+}
+.Burger:active {
+  transform: scale(1.2);
+}
+
+@media (max-width: 700px) {
+  .Header {
+    grid-template-areas: "logo burger" "nav nav";
+  }
+  .Nav {
+    display: grid;
+    grid-area: nav;
+    flex-direction: column !important;
+    /* grid-template-columns: repeat(2, auto);
+    align-items: center;
+    justify-items: right; */
+    grid-template-rows: repeat(2, auto);
+    grid-template-columns: none;
+    grid-row-gap: 20px;
+
+    padding: 30px 0 30px;
+    background: rgba(40, 44, 47, 0.95);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+  .Nav a,
+  .Nav a:hover {
+    color: #fff !important;
+  }
+  .Burger {
+    display: inline;
+  }
+}
+
+.NavAnimation-enter {
+  opacity: 0;
+  transform: scale(0.5);
+}
+.NavAnimation-enter-active {
+  opacity: 1;
+  transform: translateX(0);
+  transition: opacity 350ms, transform 350ms;
+}
+.NavAnimation-exit {
+  opacity: 1;
+}
+.NavAnimation-exit-active {
+  opacity: 0;
+  transform: scale(0.5);
+  transition: opacity 350ms, transform 350ms;
+}

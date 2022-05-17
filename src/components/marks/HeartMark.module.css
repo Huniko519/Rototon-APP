@@ -1,0 +1,26 @@
+.heartCircle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  cursor: pointer;
+}
+
+.heartIcon {
+  font-size: 1rem;
+  color: #df2a2a;
+  margin: 0.5rem;
+}
+
+.heartHover {
+  display: none;
+}
+
+/* .heartCircle:hover .heartNormal {
+  display: none;
+}
+
+.heartCircle:hover .heartHover {
+  display: block;
+} */
